@@ -257,7 +257,12 @@ var dashRoutes = [
         icon: DashboardIcon,
         component: Test
     },
-    { redirect: true, path: "/", pathTo: "/main/dashboard", name: "Dashboard" }
+    {
+        redirect: true,
+        path: "/main",
+        pathTo: "/main/dashboard",
+        name: "Dashboard"
+    }
 ];
 
 export default dashRoutes;
