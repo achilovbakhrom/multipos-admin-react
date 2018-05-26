@@ -15,7 +15,7 @@ import DateRange from "@material-ui/icons/DateRange";
 
 var dashRoutes = [
     {
-        path: "/dashboard",
+        path: "/main/dashboard",
         name: "Dashboard",
         icon: DashboardIcon,
         component: Test
@@ -23,181 +23,241 @@ var dashRoutes = [
     {
         collapse: true,
         path: "-page",
-        name: "Pages",
-        state: "openPages",
+        name: "Company",
+        state: "openCopmany",
         icon: Image,
         views: [
             {
-                path: "/components/buttons",
-                name: "Buttons",
-                mini: "B",
+                path: "/main/copmany-management",
+                name: "Management",
+                mini: "CM",
                 component: Test
             },
             {
-                path: "/components/grid-system",
-                name: "Grid System",
-                mini: "GS",
-                component: Test
-            },
-            {
-                path: "/components/panels",
-                name: "Panels",
-                mini: "P",
-                component: Test
-            },
-            {
-                path: "/components/sweet-alert",
-                name: "Sweet Alert",
-                mini: "SA",
-                component: Test
-            },
-            {
-                path: "/components/notifications",
-                name: "Notifications",
-                mini: "N",
-                component: Test
-            },
-            { path: "/components/icons", name: "Icons", mini: "I", component: Test },
-            {
-                path: "/components/typography",
-                name: "Typography",
-                mini: "T",
+                path: "/main/company-list",
+                name: "Add Company",
+                mini: "AC",
                 component: Test
             }
         ]
     },
     {
         collapse: true,
-        path: "/components",
-        name: "Components",
-        state: "openComponents",
+        path: "/main/organization",
+        name: "Structure",
+        state: "openOrganizationStructure",
         icon: Apps,
         views: [
             {
-                path: "/components/buttons",
-                name: "Buttons",
-                mini: "B",
+                path: "/main/establishmentVsPOS",
+                name: "Establishment",
+                mini: "EP",
                 component: Test
             },
             {
-                path: "/components/grid-system",
-                name: "Grid System",
-                mini: "GS",
-                component: Test
-            },
-            {
-                path: "/components/panels",
-                name: "Panels",
-                mini: "P",
-                component: Test
-            },
-            {
-                path: "/components/sweet-alert",
-                name: "Sweet Alert",
-                mini: "SA",
-                component: Test
-            },
-            {
-                path: "/components/notifications",
-                name: "Notifications",
-                mini: "N",
-                component: Test
-            },
-            { path: "/components/icons", name: "Icons", mini: "I", component: Test },
-            {
-                path: "/components/typography",
-                name: "Typography",
-                mini: "T",
+                path: "/main/warehouse",
+                name: "Warehouse",
+                mini: "WH",
                 component: Test
             }
         ]
     },
     {
         collapse: true,
-        path: "/forms",
-        name: "Forms",
-        state: "openForms",
+        path: "/main/entity",
+        name: "Entity",
+        state: "openEntity",
         icon: ContentPaste,
         views: [
             {
-                path: "/forms/regular-forms",
-                name: "Regular Forms",
-                mini: "RF",
+                path: "/main/products",
+                name: "Products",
+                mini: "PD",
                 component: Test
             },
             {
-                path: "/forms/extended-forms",
-                name: "Extended Forms",
-                mini: "EF",
+                path: "/main/product-class",
+                name: "Product class",
+                mini: "PC",
                 component: Test
             },
             {
-                path: "/forms/validation-forms",
-                name: "Validation Forms",
-                mini: "VF",
+                path: "/main/discount",
+                name: "Discount",
+                mini: "DC",
                 component: Test
             },
-            { path: "/forms/wizard", name: "Wizard", mini: "W", component: Test }
+            {
+                path: "/main/tax",
+                name: "Tax",
+                mini: "TX",
+                component: Test
+            },
+            {
+                path: "/main/service-fee",
+                name: "Service Fee",
+                mini: "SF",
+                component: Test
+            },
+            {
+                path: "/main/vendor",
+                name: "Vendor",
+                mini: "VD",
+                component: Test
+            },
+            {
+                path: "/main/establishment",
+                name: "Establishment",
+                mini: "EB",
+                component: Test
+            },
+            {
+                path: "/main/warehouse",
+                name: "Warehouse",
+                mini: "WH",
+                component: Test
+            }
         ]
     },
     {
+        path: "/main/vendors-management",
+        name: "Vendors",
+        icon: DashboardIcon,
+        component: Test
+    },
+    {
+        path: "/main/inventory",
+        name: "Inventory",
+        icon: DashboardIcon,
+        component: Test
+    },
+    {
+        path: "/main/crm",
+        name: "CRM",
+        icon: DashboardIcon,
+        component: Test
+    },
+    {
+        path: "/main/hrms",
+        name: "HRMS",
+        icon: DashboardIcon,
+        component: Test
+    },
+    {
         collapse: true,
-        path: "/tables",
-        name: "Tables",
-        state: "openTables",
+        path: "/main/report",
+        name: "Report",
+        state: "openReport",
         icon: GridOn,
         views: [
             {
-                path: "/tables/regular-tables",
-                name: "Regular Tables",
-                mini: "RT",
+                path: "/main/report/summary",
+                name: "Summary",
+                mini: "SM",
                 component: Test
             },
             {
-                path: "/tables/extended-tables",
-                name: "Extended Tables",
-                mini: "ET",
+                path: "/main/report/by-tills",
+                name: "By Tills",
+                mini: "BT",
                 component: Test
             },
             {
-                path: "/tables/react-tables",
-                name: "React Tables",
-                mini: "RT",
+                path: "/main/report/orders",
+                name: "Orders",
+                mini: "OD",
+                component: Test
+            },
+            {
+                path: "/main/report/payment",
+                name: "Payments",
+                mini: "PM",
+                component: Test
+            },
+            {
+                path: "/main/report/hourlySales",
+                name: "Hourly Sales",
+                mini: "HS",
+                component: Test
+            },
+            {
+                path: "/main/report/productProfit",
+                name: "Product Profit",
+                mini: "PP",
+                component: Test
+            },
+            {
+                path: "/main/report/Inventory",
+                name: "Inventory",
+                mini: "IV",
+                component: Test
+            },
+            {
+                path: "/main/report/customers",
+                name: "Customers",
+                mini: "CM",
+                component: Test
+            },
+            {
+                path: "/main/report/vendors",
+                name: "Vendors",
+                mini: "VN",
+                component: Test
+            },
+            {
+                path: "/main/report/debts",
+                name: "Debts",
+                mini: "DB",
+                component: Test
+            },
+            {
+                path: "/main/report/discount",
+                name: "Discount",
+                mini: "DC",
+                component: Test
+            },
+            {
+                path: "/main/report/service-fee",
+                name: "Service Fee",
+                mini: "SF",
                 component: Test
             }
         ]
     },
     {
         collapse: true,
-        path: "/maps",
-        name: "Maps",
-        state: "openMaps",
-        icon: Place,
+        path: "/main/settings",
+        name: "Settings",
+        state: "openSettings",
+        icon: GridOn,
         views: [
             {
-                path: "/maps/google-maps",
-                name: "Google Maps",
-                mini: "GM",
+                path: "/main/settings/currency",
+                name: "Currency",
+                mini: "CC",
                 component: Test
             },
             {
-                path: "/maps/full-screen-maps",
-                name: "Full Screen Map",
-                mini: "FSM",
+                path: "/main/settings/account",
+                name: "Account",
+                mini: "AC",
                 component: Test
             },
             {
-                path: "/maps/vector-maps",
-                name: "Vector Map",
-                mini: "VM",
+                path: "/main/settings/payment-type",
+                name: "Payment Ty0e",
+                mini: "PT",
                 component: Test
             }
         ]
     },
-    { path: "/widgets", name: "Widgets", icon: WidgetsIcon, component: Test },
-    { path: "/charts", name: "Charts", icon: Timeline, component: Test },
-    { path: "/calendar", name: "Calendar", icon: DateRange, component: Test },
-    { redirect: true, path: "/", pathTo: "/dashboard", name: "Dashboard" }
+    {
+        path: "/main/schedule",
+        name: "Schedule",
+        icon: DashboardIcon,
+        component: Test
+    },
+    { redirect: true, path: "/", pathTo: "/main/dashboard", name: "Dashboard" }
 ];
 
 export default dashRoutes;
