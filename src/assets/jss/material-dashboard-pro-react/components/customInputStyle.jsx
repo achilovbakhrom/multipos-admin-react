@@ -7,7 +7,7 @@ import {
   dangerColor,
   successColor,
   defaultFont,
-    infoColor
+  infoColor
 } from "../../../jss/material-dashboard-pro-react.jsx";
 
 const customInputStyle = {
