@@ -2,7 +2,7 @@
 // // // RegularCard styles
 // #############################
 
-import { card, defaultFont } from "assets/jss/material-dashboard-pro-react.jsx";
+import { card, defaultFont } from "../../../jss/material-dashboard-pro-react.jsx";
 
 const regularCardStyle = {
   card,

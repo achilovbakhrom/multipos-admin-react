@@ -6,7 +6,8 @@ import {
   primaryColor,
   dangerColor,
   successColor,
-  defaultFont
+  defaultFont,
+    infoColor
 } from "../../../jss/material-dashboard-pro-react.jsx";
 
 const customInputStyle = {
@@ -26,7 +27,7 @@ const customInputStyle = {
       height: "1px !important"
     },
     "&:after": {
-      backgroundColor: primaryColor,
+      backgroundColor: infoColor,
       transition: "0.3s ease all"
     }
   },

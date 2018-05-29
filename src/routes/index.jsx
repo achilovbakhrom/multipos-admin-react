@@ -1,5 +1,7 @@
 import Test from "../components/empty";
 import Main from "../containers/Main/Main";
+import SignUp from "../containers/SignUp/SignUp";
+import SinglePage from "../containers/SinglePage/SinglePage";
 var indexRoutes = [
     {
         path: "/main",
@@ -9,17 +11,17 @@ var indexRoutes = [
     {
         path: "/sign-in",
         name: "Sign In",
-        component: Test
+        component: SinglePage
     },
     {
         path: "/sign-up",
         name: "Sign Up",
-        component: Test
+        component: SignUp
     },
     {
         path: "/confirm",
         name: "Confirmation",
-        component: Test
+        component: SinglePage
     }
 ];
 

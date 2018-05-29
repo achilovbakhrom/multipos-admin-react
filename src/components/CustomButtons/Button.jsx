@@ -6,7 +6,7 @@ import cx from "classnames";
 import withStyles from "material-ui/styles/withStyles";
 import Button from "material-ui/Button";
 
-import buttonStyle from "assets/jss/material-dashboard-pro-react/components/buttonStyle";
+import buttonStyle from "../../assets/jss/material-dashboard-pro-react/components/buttonStyle";
 
 function RegularButton({ ...props }) {
   const {

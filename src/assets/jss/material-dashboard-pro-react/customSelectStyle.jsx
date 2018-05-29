@@ -2,7 +2,7 @@
 // // // CustomSelects styles
 // #############################
 
-import { primaryColor, primaryBoxShadow } from "assets/jss/material-dashboard-pro-react.jsx";
+import { primaryColor, primaryBoxShadow } from "../../../assets/jss/material-dashboard-pro-react.jsx";
 
 const customSelectStyle = {
   select: {

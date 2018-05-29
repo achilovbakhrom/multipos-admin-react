@@ -8,7 +8,7 @@ import Card from "material-ui/Card";
 import CardContent from "material-ui/Card/CardContent";
 import CardHeader from "material-ui/Card/CardHeader";
 
-import regularCardStyle from "assets/jss/material-dashboard-pro-react/components/regularCardStyle";
+import regularCardStyle from "../../assets/jss/material-dashboard-pro-react/components/regularCardStyle";
 
 function RegularCard({ ...props }) {
   const {

@@ -12,7 +12,7 @@ import {
   blueCardHeader,
   purpleCardHeader,
   roseCardHeader
-} from "assets/jss/material-dashboard-pro-react.jsx";
+} from "../../../jss/material-dashboard-pro-react.jsx";
 
 const loginCardStyle = {
   card: {

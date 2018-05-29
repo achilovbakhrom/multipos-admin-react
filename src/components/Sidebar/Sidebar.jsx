@@ -18,6 +18,7 @@ import Collapse from "material-ui/transitions/Collapse";
 // core components
 import HeaderLinks from "../../components/Header/HeaderLinks.jsx";
 
+
 import sidebarStyle from "../../assets/jss/material-dashboard-pro-react/components/sidebarStyle.jsx";
 
 import avatar from "../../assets/img/faces/avatar.jpg";

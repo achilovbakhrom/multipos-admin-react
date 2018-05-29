@@ -20,9 +20,9 @@ import ListItemText from "material-ui/List/ListItemText";
 import Dashboard from "@material-ui/icons/Dashboard";
 import Menu from "@material-ui/icons/Menu";
 
-import pagesRoutes from "routes/pages.jsx";
+import pagesRoutes from "../../routes/singlePages";
 
-import pagesHeaderStyle from "assets/jss/material-dashboard-pro-react/components/pagesHeaderStyle.jsx";
+import pagesHeaderStyle from "../../assets/jss/material-dashboard-pro-react/components/pagesHeaderStyle";
 
 class PagesHeader extends React.Component {
   constructor(props) {

@@ -7,9 +7,9 @@ import withStyles from "material-ui/styles/withStyles";
 import Card from "material-ui/Card";
 
 // core components
-import Button from "components/CustomButtons/Button.jsx";
+import Button from "../../components/CustomButtons/Button.jsx";
 
-import wizardStyle from "assets/jss/material-dashboard-pro-react/components/wizardStyle.jsx";
+import wizardStyle from "../../assets/jss/material-dashboard-pro-react/components/wizardStyle.jsx";
 
 class Wizard extends React.Component {
   constructor(props) {
