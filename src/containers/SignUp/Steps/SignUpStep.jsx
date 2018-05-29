@@ -13,8 +13,8 @@ import InputAdornment from "material-ui/Input/InputAdornment";
 import GridContainer from "../../../components/Grid/GridContainer.jsx";
 import ItemGrid from "../../../components/Grid/ItemGrid.jsx";
 import CustomInput from "../../../components/CustomInput/CustomInput.jsx";
-
-
+import PersonOutline from "@material-ui/icons/PersonOutline";
+import LockOpen from "@material-ui/icons/LockOpen";
 const style = {
     infoText: {
         fontWeight: "300",
@@ -107,71 +107,87 @@ class SignUpStep extends React.Component {
         const {classes} = this.props;
         return (
             <GridContainer justify="center">
-                <ItemGrid xs={10} sm={10}>
-                    <CustomInput
-                        success={this.state.firstnameState === "success"}
-                        error={this.state.firstnameState === "error"}
-                        labelText={
-                            <span>
+                <GridContainer item xs={12} sm={12} justify="center">
+                    <ItemGrid xs={1} sm={1} style = {{
+                            marginTop: "auto"
+                        }}>
+                        <PersonOutline  />
+                    </ItemGrid>
+                    <ItemGrid lg={10} xs={10} >
+                        <CustomInput
+                            success={this.state.firstnameState === "success"}
+                            error={this.state.firstnameState === "error"}
+                            labelText={
+                                <span>
                         First Name <small>(required)</small>
                       </span>
-                        }
-                        id="firstname"
-                        formControlProps={{
-                            fullWidth: true
-                        }}
-                        inputProps={{
-                            onChange: event => this.change(event, "firstname", "length", 3)
+                            }
+                            id="firstname"
+                            formControlProps={{
+                                fullWidth: true
+                            }}
+                            inputProps={{
+                                onChange: event => this.change(event, "firstname", "length", 3)
+                            }}
 
+                        />
+                    </ItemGrid>
+                </GridContainer>
 
-                        }}
-
-                    />
-                    <CustomInput
-                        success={this.state.lastnameState === "success"}
-                        error={this.state.lastnameState === "error"}
-                        labelText={
-                            <span>
+                <GridContainer xs={12} sm={12} justify="center">
+                    <ItemGrid xs={1} sm={1} style = {{
+                        marginTop: "auto"
+                    }}>
+                        <LockOpen  />
+                    </ItemGrid>
+                    <ItemGrid xs={10} sm={10}>
+                        <CustomInput
+                            success={this.state.lastnameState === "success"}
+                            error={this.state.lastnameState === "error"}
+                            labelText={
+                                <span>
                         Last Name <small>(required)</small>
                       </span>
-                        }
-                        id="lastname"
-                        formControlProps={{
-                            fullWidth: true
-                        }}
-                        inputProps={{
-                            onChange: event => this.change(event, "lastname", "length", 3),
-                            endAdornment: (
-                                <InputAdornment position="end" className={classes.inputAdornment}>
-                                    <RecordVoiceOver className={classes.inputAdornmentIcon}/>
-                                </InputAdornment>
-                            )
-                        }}
-                    />
-                </ItemGrid>
-                <ItemGrid xs={12} sm={12} md={12} lg={10}>
-                    <CustomInput
-                        success={this.state.emailState === "success"}
-                        error={this.state.emailState === "error"}
-                        labelText={
-                            <span>
-                    Email <small>(required)</small>
-                  </span>
-                        }
-                        id="email"
-                        formControlProps={{
-                            fullWidth: true
-                        }}
-                        inputProps={{
-                            onChange: event => this.change(event, "email", "email"),
-                            endAdornment: (
-                                <InputAdornment position="end" className={classes.inputAdornment}>
-                                    <Email className={classes.inputAdornmentIcon}/>
-                                </InputAdornment>
-                            )
-                        }}
-                    />
-                </ItemGrid>
+                            }
+                            id="lastname"
+                            formControlProps={{
+                                fullWidth: true
+                            }}
+                            inputProps={{
+                                onChange: event => this.change(event, "lastname", "length", 3),
+                            }}
+                        />
+                    </ItemGrid>
+                </GridContainer>
+
+                <GridContainer xs={12} sm={12} justify="center">
+                    <ItemGrid xs={1} sm={1} style = {{
+                        marginTop: "auto"
+                    }}>
+                        <LockOpen  />
+                    </ItemGrid>
+                    <ItemGrid xs={10} sm={10}>
+                        <CustomInput
+                            success={this.state.lastnameState === "success"}
+                            error={this.state.lastnameState === "error"}
+                            labelText={
+                                <span>
+                        Last Name <small>(required)</small>
+                      </span>
+                            }
+                            id="lastname"
+                            formControlProps={{
+                                fullWidth: true
+                            }}
+                            inputProps={{
+                                onChange: event => this.change(event, "lastname", "length", 3),
+                            }}
+                        />
+                    </ItemGrid>
+                </GridContainer>
+                <ItemGrid xs={10} sm={10}
+                          
+                />
             </GridContainer>
         );
     }

@@ -12,7 +12,7 @@ class SignUp extends React.Component {
     render() {
         return (
             <GridContainer justify="center">
-                <ItemGrid xs={7} sm={4}>
+                <ItemGrid sm={9} xs={7} md={5} >
                     <Wizard
                         validate
                         steps={[
