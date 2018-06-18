@@ -45,10 +45,17 @@ class Wizard extends React.Component {
     };
     this.navigationStepChange = this.navigationStepChange.bind(this);
     this.refreshAnimation = this.refreshAnimation.bind(this);
-    this.previousButtonClick = this.previousButtonClick.bind(this);
-    this.previousButtonClick = this.previousButtonClick.bind(this);
-    this.finishButtonClick = this.finishButtonClick.bind(this);
   }
+
+  setPage(key) {
+      if (key <= this.props.steps.length) {
+          this.setState({
+              currentStep: key,
+          });
+          this.refreshAnimation(key);
+      }
+  }
+
   componentDidMount() {
     this.refreshAnimation(0);
     window.addEventListener("resize", this.updateWidth.bind(this));
@@ -76,61 +83,12 @@ class Wizard extends React.Component {
       if (validationState) {
         this.setState({
           currentStep: key,
-          nextButton: this.props.steps.length > key + 1 ? true : false,
-          previousButton: key > 0 ? true : false,
-          finishButton: this.props.steps.length === key + 1 ? true : false
         });
         this.refreshAnimation(key);
       }
     }
   }
-  nextButtonClick() {
-    if (
-      (this.props.validate &&
-        ((this[this.props.steps[this.state.currentStep].stepId].isValidated !==
-          undefined &&
-          this[
-            this.props.steps[this.state.currentStep].stepId
-          ].isValidated()) ||
-          this[this.props.steps[this.state.currentStep].stepId].isValidated ===
-            undefined)) ||
-      this.props.validate === undefined
-    ) {
-      var key = this.state.currentStep + 1;
-      this.setState({
-        currentStep: key,
-        nextButton: this.props.steps.length > key + 1 ? true : false,
-        previousButton: key > 0 ? true : false,
-        finishButton: this.props.steps.length === key + 1 ? true : false
-      });
-      this.refreshAnimation(key);
-    }
-  }
-  previousButtonClick() {
-    var key = this.state.currentStep - 1;
-    if (key >= 0) {
-      this.setState({
-        currentStep: key,
-        nextButton: this.props.steps.length > key + 1 ? true : false,
-        previousButton: key > 0 ? true : false,
-        finishButton: this.props.steps.length === key + 1 ? true : false
-      });
-      this.refreshAnimation(key);
-    }
-  }
-  finishButtonClick() {
-    if (
-      this.props.validate &&
-      ((this[this.props.steps[this.state.currentStep].stepId].isValidated !==
-        undefined &&
-        this[this.props.steps[this.state.currentStep].stepId].isValidated()) ||
-        this[this.props.steps[this.state.currentStep].stepId].isValidated ===
-          undefined) &&
-      this.props.finishButtonClick !== undefined
-    ) {
-      this.props.finishButtonClick();
-    }
-  }
+
   refreshAnimation(index) {
     var total = this.props.steps.length;
     var li_width = 100 / total;
@@ -175,6 +133,9 @@ class Wizard extends React.Component {
     };
     this.setState({ movingTabStyle: movingTabStyle });
   }
+
+
+
   render() {
     const { classes, title, subtitle, color, steps } = this.props;
     return (
@@ -214,56 +175,26 @@ class Wizard extends React.Component {
             {steps.map((prop, key) => {
               const stepContentClasses = cx({
                 [classes.stepContentActive]: this.state.currentStep === key,
-                [classes.stepContent]: this.state.currentStep !== key
+                [classes.stepContent]: this.state.currentStep !== key,
               });
               return (
                 <div className={stepContentClasses} key={key}>
                   {/* <prop.stepComponent innerRef={prop.stepId}/> */}
                   <prop.stepComponent
                     innerRef={node => (this[prop.stepId] = node)}
+                    setPage = {this.setPage.bind(this)}
                   />
                 </div>
               );
             })}
-          </div>
-          <div className={classes.footer}>
-            <div className={classes.left}>
-              {this.state.previousButton ? (
-                <Button
-                  customClass={this.props.previousButtonClasses}
-                  onClick={() => this.previousButtonClick()}
-                >
-                  {this.props.previousButtonText}
-                </Button>
-              ) : null}
-            </div>
-            <div className={classes.right}>
-              {this.state.nextButton ? (
-                <Button
-                  color="rose"
-                  customClass={this.props.nextButtonClasses}
-                  onClick={() => this.nextButtonClick()}
-                >
-                  {this.props.nextButtonText}
-                </Button>
-              ) : null}
-              {this.state.finishButton ? (
-                <Button
-                  color="rose"
-                  customClass={this.finishButtonClasses}
-                  onClick={() => this.finishButtonClick()}
-                >
-                  {this.props.finishButtonText}
-                </Button>
-              ) : null}
-            </div>
-            <div className={classes.clearfix} />
           </div>
         </Card>
       </div>
     );
   }
 }
+
+
 
 Wizard.defaultProps = {
   color: "rose",
@@ -296,13 +227,7 @@ Wizard.propTypes = {
   ]),
   title: PropTypes.string,
   subtitle: PropTypes.string,
-  previousButtonClasses: PropTypes.string,
-  previousButtonText: PropTypes.string,
-  nextButtonClasses: PropTypes.string,
-  nextButtonText: PropTypes.string,
-  finishButtonClasses: PropTypes.string,
-  finishButtonText: PropTypes.string,
-  finishButtonClick: PropTypes.func,
+  setPage: PropTypes.func,
   validate: PropTypes.bool
 };
 

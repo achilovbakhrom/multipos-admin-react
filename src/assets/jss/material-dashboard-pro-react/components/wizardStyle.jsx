@@ -29,6 +29,9 @@ const wizardStyle = {
     textAlign: "center",
     padding: "25px 0 35px"
   },
+  hidden: {
+      overflow: "hidden"
+  },
   title: {
     margin: "0"
   },

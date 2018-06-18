@@ -257,34 +257,6 @@ class SignUpStep extends React.Component {
     }
 }
 
-const mapStateToProps = (state, ownProps) => {
-    return {
-        isRequestBegin: state.signUpReducer.isRequestBegin,
-        errorMessage: state.signUpReducer.errorMessage,
-        isEmailValid: state.signUpReducer.isEmailValid,
-        isPasswordCorrect: state.signUpReducer.isPasswordCorrect,
-        isPasswordConfirmationCorrect: state.signUpReducer.isPasswordConfrimationCorrect,
-        data: state.signUpReducer.data
-    };
-};
-
-const mapDispatchToProps = (dispatch) => {
-    return {
-        signUp: (username, password, passwordConfirm) => {
-            dispatch(signUp(username, password, passwordConfirm));
-        },
-        rtEmailValidation: (fieldValue) => {
-            dispatch(rtEmailValidation(fieldValue))
-        },
-        rtPasswordValidation: (password, confirmPassword) => {
-            dispatch(rtPasswordValidation(password, confirmPassword))
-        },
-        rtPasswordConfirmationValidation: (confirmationPassword, password) => {
-            dispatch(rtPasswordConfirmationValidation(confirmationPassword, password))
-        }
-    };
-};
-
 SignUpStep.propTypes = {
     signUp: PropTypes.func,
     rtEmailValidation: PropTypes.func,

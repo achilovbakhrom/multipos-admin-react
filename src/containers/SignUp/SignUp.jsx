@@ -9,30 +9,50 @@ import SignUpStep from "./Steps/SignUpStep.jsx";
 import ConfirmationStep from "./Steps/ConfirmationStep.jsx";
 
 class SignUp extends React.Component {
+
+    signUp(username, password) {
+
+    }
+
     render() {
         return (
-            <GridContainer justify="center">
-                <ItemGrid sm={9} xs={7} md={5} >
-                    <Wizard
-                        validate
-                        steps={[
-                            {
-                                stepName: "Sign Up",
-                                stepComponent: SignUpStep,
-                                stepId: "signUp"
-                            },
-                            {
-                                stepName: "Confirmation",
-                                stepComponent: ConfirmationStep,
-                                stepId: "confirmation"
-                            }
-                        ]}
-                        title="Build Your Profile"
-                        subtitle="This information will let us know more about you."
-                        color="info"
-                    />
-                </ItemGrid>
-            </GridContainer>
+            <div>
+
+                <GridContainer justify="center">
+                    <ItemGrid sm={12} xs={11} md={5}>
+
+                        <Wizard
+                            validate
+                            defaultPage = {0}
+                            nextButtonClasses="hidden"
+                            steps={[
+                                {
+                                    stepName: "Sign Up",
+                                    stepComponent: SignUpStep,
+                                    stepId: "signUp",
+                                    componentProps: {
+                                        signUpHandler: this.signUp.bind(this),
+                                        errorMessage: "",
+                                        
+                                    }
+                                },
+                                {
+                                    stepName: "Confirmation",
+                                    stepComponent: ConfirmationStep,
+                                    stepId: "confirmation"
+                                }
+                            ]}
+
+                            title="Sign Up & Confirm"
+                            subtitle="This information will let us know more about you."
+                            color="info"
+                        />
+
+                    </ItemGrid>
+                </GridContainer>
+            </div>
+
+
         );
     }
 }
